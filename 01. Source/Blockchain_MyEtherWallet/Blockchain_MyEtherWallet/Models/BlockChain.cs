@@ -76,5 +76,42 @@ namespace Blockchain_MyEtherWallet.Models
             BChain.Add(block);
             PendingTransactions = new List<Transaction>();
         }
+
+        public List<List<string>> GetAll()
+        {
+            List<List<string>> AllTransactions = new List<List<string>>();
+            int i = 0;
+            foreach(Block block in this.BChain)
+            {
+                List<string> OneTransaction = new List<string>();
+                OneTransaction.Add("Block No. " + i.ToString());
+                OneTransaction.Add("Transaction: ");
+                foreach(Transaction t in block.Transactions)
+                {
+                    OneTransaction.Add("From: " + t.From + "To: " + t.To + " " + t.Amount + " VCOINS");
+                }
+                OneTransaction.Add("Hash: " + block.Hash);
+                OneTransaction.Add("Previous Hash: " + block.PreviousHash);
+                i++;
+                AllTransactions.Add(OneTransaction);
+            }
+            return AllTransactions;
+        }
+
+        public List<string> GetTransactionInfo()
+        {
+            List<string> TransactionInfo = new List<string>();
+            foreach(Block block in this.BChain)
+            {
+                foreach(Transaction t in block.Transactions)
+                {
+                    if(t.To.Contains("miner"))
+                        TransactionInfo.Add("[" + t.To + "] đã nhận được " + t.Amount.ToString() + " (VCOIN)");
+                    else
+                        TransactionInfo.Add("[" + t.From + "] đã gửi cho " + "[" + t.To + "] " + t.Amount.ToString() + " (VCOIN)");
+                }
+            }
+            return TransactionInfo;
+        }
     }
 }

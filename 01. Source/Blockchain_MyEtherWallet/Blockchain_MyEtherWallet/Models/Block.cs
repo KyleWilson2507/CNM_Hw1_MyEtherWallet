@@ -36,7 +36,13 @@ namespace Blockchain_MyEtherWallet.Models
 
         public void MiningBlock(int proofOfWorkDiff)
         {
+            string leadingZeroes = new String('0', proofOfWorkDiff);
 
+            while (Hash.Substring(0, proofOfWorkDiff) != leadingZeroes)
+            {
+                Nonce++;
+                Hash = MakeHash();
+            }
         }
     }
 }
