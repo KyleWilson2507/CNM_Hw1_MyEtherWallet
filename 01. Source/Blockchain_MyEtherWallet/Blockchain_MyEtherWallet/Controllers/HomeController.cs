@@ -69,13 +69,13 @@ namespace Blockchain_MyEtherWallet.Controllers
             {
                 ViewBag.Account = AccountType;
                 ViewBag.Coins = 0;
-                return View("Account");
+                return View("Details");
             }
             else
             {
                 ViewBag.Account = AccountType;
                 ViewBag.Coins = BChain.GetBalance(AccountType);
-                return View("Account");
+                return View("Details");
             }
         }
 

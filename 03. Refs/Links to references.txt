@@ -1,0 +1,5 @@
+1. http://thaotrinh.info/tao-ung-dung-blockchain-dau-tien-voi-c/
+2. https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/
+3. https://www.c-sharpcorner.com/article/building-a-blockchain-in-net-core-proof-of-work/
+4. https://www.c-sharpcorner.com/article/building-a-blockchain-in-net-core-transaction-and-reward/
+5. https://stackoverflow.com/questions/53642125/how-do-you-create-an-ethereum-wallet-in-c-sharp-directly

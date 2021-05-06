@@ -9,11 +9,5 @@ namespace Blockchain_MyEtherWallet.Models
     {
         public string WalletName { get; set; }
         public string WalletBalance { get; set; }
-
-        public TransactionsInWallet(string walletName, string walletBalance)
-        {
-            WalletName = walletName;
-            WalletBalance = walletBalance;
-        }
     }
 }
