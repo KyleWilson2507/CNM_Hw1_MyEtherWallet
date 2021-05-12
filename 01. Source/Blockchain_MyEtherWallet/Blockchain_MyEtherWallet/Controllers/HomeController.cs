@@ -104,7 +104,7 @@ namespace Blockchain_MyEtherWallet.Controllers
                 if (balance <= mon)
                 {
                     ViewBag.Account = AccountType;
-                    ViewBag.Alert = "Số tiền chuyển không thể vượt quá số tiền trong ví" + " (" + balance.ToString() + " VCOIN) !";
+                    ViewBag.Alert = "Money transfered must not be over" + " (" + balance.ToString() + " coins) !";
 
                     return View("Transfer");
                 }
@@ -130,7 +130,7 @@ namespace Blockchain_MyEtherWallet.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Ví điện tử demo";
+            ViewBag.Message = "My Simple Etherwallet";
 
             return View("About");
         }
@@ -164,14 +164,14 @@ namespace Blockchain_MyEtherWallet.Controllers
                 else
                 {
                     ViewBag.Account = AccountType;
-                    ViewBag.Alert = "Sai mật khẩu";
+                    ViewBag.Alert = "Wrong password";
                     return View("Login");
                 }
             }
             else
             {
                 ViewBag.Account = AccountType;
-                ViewBag.Alert = "Sai tên đăng nhập";
+                ViewBag.Alert = "Wrong email";
 
                 return View("Login");
             }

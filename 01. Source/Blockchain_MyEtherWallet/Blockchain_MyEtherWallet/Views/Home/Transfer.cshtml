@@ -1,16 +1,16 @@
 ﻿@model Blockchain_MyEtherWallet.Models.TransactionsInWallet
 
 @{
-    ViewBag.Title = "Giao dịch";
+    ViewBag.Title = "Transfer";
 }
 <h2>@ViewBag.Title</h2>
 
 @if (ViewBag.Account == "")
 {
-    <p style="color:red;">Bạn chưa đăng nhập!</p>
+    <p style="color:red;">You are not logged in</p>
     using (@Html.BeginForm("Login", "Home"))
     {
-        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        <button type="submit" class="btn btn-primary">Login</button>
     }
 }
 else
@@ -21,14 +21,14 @@ else
 
         <h5 style="color:red;">@ViewBag.Alert</h5>
         <div class="form-group">
-            <label>Tên ví đích</label>
-            @Html.TextBoxFor(s => s.WalletName, "", new { @type = "email", @class = "form-control", @placeholder = "Tên ví đích" })
+            <label>Target email</label>
+            @Html.TextBoxFor(s => s.WalletName, "", new { @type = "email", @class = "form-control", @placeholder = "Target email" })
         </div>
         <div class="form-group">
-            <label>Số tiền</label>
-            @Html.TextBoxFor(s => s.WalletBalance, "", new { @type = "number", @class = "form-control", @placeholder = "Nhập số tiền" })
+            <label>Amount</label>
+            @Html.TextBoxFor(s => s.WalletBalance, "", new { @type = "number", @class = "form-control", @placeholder = "Amount" })
         </div>
 
-        <button type="submit" class="btn btn-primary">Gửi</button>
+        <button type="submit" class="btn btn-primary">Send</button>
     }
 }

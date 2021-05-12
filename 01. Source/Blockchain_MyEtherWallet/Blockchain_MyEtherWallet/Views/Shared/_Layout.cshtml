@@ -16,22 +16,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("My Simple Etherwallet", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Tạo ví", "NewWallet", "Home")</li>
-                    <li>@Html.ActionLink("Tài khoản", "AccountDetails", "Home")</li>
-                    <li>@Html.ActionLink("Giao dịch", "Transfer", "Home")</li>
-                    <li>@Html.ActionLink("Lịch sử", "History", "Home")</li>
-                    <li>@Html.ActionLink("Thông tin", "About", "Home")</li>
-                    <li>@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Create wallet", "NewWallet", "Home")</li>
+                    <li>@Html.ActionLink("Account", "AccountDetails", "Home")</li>
+                    <li>@Html.ActionLink("Transfer", "Transfer", "Home")</li>
+                    <li>@Html.ActionLink("History", "History", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="padding-top: 30px" >
         @RenderBody()
         <hr />
         <footer>

@@ -84,11 +84,11 @@ namespace Blockchain_MyEtherWallet.Models
             foreach(Block block in this.BChain)
             {
                 List<string> OneTransaction = new List<string>();
-                OneTransaction.Add("Block No. " + i.ToString());
+                OneTransaction.Add("BLOCK NO. " + i.ToString());
                 OneTransaction.Add("Transaction: ");
                 foreach(Transaction t in block.Transactions)
                 {
-                    OneTransaction.Add("From: " + t.From + "To: " + t.To + " " + t.Amount + " VCOINS");
+                    OneTransaction.Add("From: " + t.From + " To: " + t.To + " " + t.Amount + " coins");
                 }
                 OneTransaction.Add("Hash: " + block.Hash);
                 OneTransaction.Add("Previous Hash: " + block.PreviousHash);
@@ -106,9 +106,9 @@ namespace Blockchain_MyEtherWallet.Models
                 foreach(Transaction t in block.Transactions)
                 {
                     if(t.To.Contains("miner"))
-                        TransactionInfo.Add("[" + t.To + "] đã nhận được " + t.Amount.ToString() + " (VCOIN)");
+                        TransactionInfo.Add("[" + t.To + "] received from " + t.Amount.ToString() + " coins");
                     else
-                        TransactionInfo.Add("[" + t.From + "] đã gửi cho " + "[" + t.To + "] " + t.Amount.ToString() + " (VCOIN)");
+                        TransactionInfo.Add("[" + t.From + "] sent to " + "[" + t.To + "] " + t.Amount.ToString() + " coins");
                 }
             }
             return TransactionInfo;
